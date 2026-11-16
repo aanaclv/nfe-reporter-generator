@@ -1,0 +1,15 @@
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\obj\Debug\net10.0\nfe-report.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\obj\Debug\net10.0\nfe-report.AssemblyInfoInputs.cache
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\obj\Debug\net10.0\nfe-report.AssemblyInfo.cs
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\obj\Debug\net10.0\nfe-report.csproj.CoreCompileInputs.cache
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\obj\Debug\net10.0\nfe-report.sourcelink.json
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\bin\Debug\net10.0\nfe-report.exe
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\bin\Debug\net10.0\nfe-report.deps.json
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\bin\Debug\net10.0\nfe-report.runtimeconfig.json
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\bin\Debug\net10.0\nfe-report.dll
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\bin\Debug\net10.0\nfe-report.pdb
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\obj\Debug\net10.0\nfe-report.dll
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\obj\Debug\net10.0\refint\nfe-report.dll
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\obj\Debug\net10.0\nfe-report.pdb
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\obj\Debug\net10.0\nfe-report.genruntimeconfig.cache
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\obj\Debug\net10.0\ref\nfe-report.dll

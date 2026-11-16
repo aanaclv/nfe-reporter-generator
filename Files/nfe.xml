@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<NFe>
+
+  <InvoiceNumber>12345</InvoiceNumber>
+
+  <Emitter>
+    <Name>Empresa ABC Ltda</Name>
+    <Cnpj>12345678000199</Cnpj>
+  </Emitter>
+
+  <Customer>
+    <Name>Cliente XYZ</Name>
+  </Customer>
+
+  <TotalValue>1500.50</TotalValue>
+
+</NFe>

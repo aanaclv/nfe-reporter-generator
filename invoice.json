@@ -1,0 +1,9 @@
+[
+  {
+    "InvoiceNumber": "12345",
+    "CompanyName": "Empresa ABC Ltda",
+    "Cnpj": "12345678000199",
+    "CustomerName": "Cliente XYZ",
+    "TotalValue": 150050
+  }
+]

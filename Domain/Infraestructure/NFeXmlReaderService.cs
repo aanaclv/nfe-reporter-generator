@@ -10,36 +10,65 @@ namespace Infraestructure
         public static Invoice LoadInvoice(string xmlPath)
         {
             XDocument doc = XDocument.Load(xmlPath);
-            
-            // CORREÇÃO 1: Ajustada a barra "/" no namespace da Sefaz
             XNamespace ns = "http://www.portalfiscal.inf.br/nfe";
 
             XElement infNfe = doc.Descendants(ns + "infNFe").FirstOrDefault() 
-                ?? throw new Exception("Tag infNFe não encontrada.");
+                ?? throw new Exception("Tag infNFe não encontrada no XML.");
 
-            string number = infNfe.Element(ns + "ide")?.Element(ns + "nNF")?.Value 
-                ?? throw new Exception("Número da NF não encontrado.");
+            string observacao = "OK";
 
-            string companyName = infNfe.Element(ns + "emit")?.Element(ns + "xNome")?.Value 
-                ?? throw new Exception("Emitente não encontrado.");
+            // 1. Número da Nota (Campo crítico)
+            string number = string.Empty;
+            try 
+            {
+                number = infNfe.Element(ns + "ide")?.Element(ns + "nNF")?.Value 
+                         ?? throw new Exception("Tag nNF ausente.");
+            } 
+            catch (Exception ex) 
+            {
+                number = "S/N";
+                observacao = $"Aviso: Número da NF com problema ({ex.Message}).";
+            }
 
-            string cnpj = infNfe.Element(ns + "emit")?.Element(ns + "CNPJ")?.Value 
-                ?? throw new Exception("CNPJ não encontrado.");
+            // 2. Emitente
+            string companyName = infNfe.Element(ns + "emit")?.Element(ns + "xNome")?.Value ?? "Emitente Desconhecido";
+            string cnpj = infNfe.Element(ns + "emit")?.Element(ns + "CNPJ")?.Value ?? "00.000.000/0000-00";
 
-            // CORREÇÃO 2: Ajustado de "customeName" para "customerName"
-            string customerName = infNfe.Element(ns + "dest")?.Element(ns + "xNome")?.Value 
-                ?? throw new Exception("Consumidor final.");
+            // 3. Destinatário
+            string customerName = infNfe.Element(ns + "dest")?.Element(ns + "xNome")?.Value ?? "Consumidor Final";
 
-            DateTime issueDate = DateTime.Parse(infNfe.Element(ns + "ide")?.Element(ns + "dhEmi")?.Value 
-                ?? throw new Exception("Data de emissão não encontrada."));
+            // 4. Data de Emissão
+            DateTime issueDate = DateTime.Now;
+            try 
+            {
+                string dateStr = infNfe.Element(ns + "ide")?.Element(ns + "dhEmi")?.Value;
+                if (!string.IsNullOrEmpty(dateStr))
+                {
+                    issueDate = DateTime.Parse(dateStr);
+                }
+            } 
+            catch 
+            {
+                if (observacao == "OK") observacao = "Aviso: Data de emissão inválida ou ausente, usando data atual.";
+            }
 
-            decimal totalValue = decimal.Parse(
-                infNfe.Element(ns + "total")?.Element(ns + "ICMSTot")?.Element(ns + "vNF")?.Value 
-                ?? throw new Exception("Valor total não encontrado."), 
-                System.Globalization.CultureInfo.InvariantCulture
-            );
+            // 5. Valor Total
+            decimal totalValue = 0;
+            try 
+            {
+                string valStr = infNfe.Element(ns + "total")?.Element(ns + "ICMSTot")?.Element(ns + "vNF")?.Value;
+                if (!string.IsNullOrEmpty(valStr))
+                {
+                    totalValue = decimal.Parse(valStr, System.Globalization.CultureInfo.InvariantCulture);
+                }
+            } 
+            catch 
+            {
+                if (observacao == "OK") observacao = "Aviso: Valor total inválido ou ausente.";
+            }
 
-            return new Invoice(number, companyName, cnpj, customerName, issueDate, totalValue);
+            // Retorna a entidade populada, passando a observação capturada durante a leitura
+            return new Invoice(number, companyName, cnpj, customerName, issueDate, totalValue, observacao);
         }
     }
 }

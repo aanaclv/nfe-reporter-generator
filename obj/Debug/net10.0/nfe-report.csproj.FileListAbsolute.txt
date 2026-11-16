@@ -13,3 +13,6 @@ C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\obj\Debu
 C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\obj\Debug\net10.0\nfe-report.pdb
 C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\obj\Debug\net10.0\nfe-report.genruntimeconfig.cache
 C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\obj\Debug\net10.0\ref\nfe-report.dll
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\bin\Debug\net10.0\Files\nfe1.xml
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\bin\Debug\net10.0\Files\nfe2.xml
+C:\Users\André Felipe\projetos-clara\nfe-report\nfe-reporter-generator\bin\Debug\net10.0\Files\nfe3.xml

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("nfe-report")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+352fef8ec8b95586135b9cae4382c48f6b86b9aa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2dbc5a9bac974709a704d107d72844c0a76b36bf")]
 [assembly: System.Reflection.AssemblyProductAttribute("nfe-report")]
 [assembly: System.Reflection.AssemblyTitleAttribute("nfe-report")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

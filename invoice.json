@@ -7,5 +7,23 @@
     "IssueDate": "2015-03-27T09:40:00-03:00",
     "TotalValue": 689.91,
     "Observacao": "OK"
+  },
+  {
+    "Number": "1",
+    "CompanyName": "FIMATEC TEXTIL LTDA",
+    "Cnpj": "58716523000119",
+    "CustomerName": "WARDY CONFECCOES LTDA",
+    "IssueDate": "2026-11-16T15:26:28.2179711-03:00",
+    "TotalValue": 833.12,
+    "Observacao": "OK"
+  },
+  {
+    "Number": "97388",
+    "CompanyName": "L J GUERRA E CIA LTDA",
+    "Cnpj": "04501136000136",
+    "CustomerName": "GUSTAVO SILVA OLIVEIRA",
+    "IssueDate": "2013-06-11T09:50:26-03:00",
+    "TotalValue": 282.80,
+    "Observacao": "OK"
   }
 ]

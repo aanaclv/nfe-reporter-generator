@@ -4,34 +4,37 @@ namespace Domain.Entities;
 
 public class Invoice
 {
-    public string InvoiceNumber { get; private set; }
-    public string CompanyName { get; private set; }
-    public string Cnpj { get; private set; }
-    public string CustomerName { get; private set; }
-    public decimal TotalValue { get; private set; }
+    public string Number { get; }
+    public string CompanyName { get; }
+    public string Cnpj { get; }
+    public string CustomerName { get; }
+    public DateTime IssueDate { get; }
+    public decimal TotalValue { get; }
+    public string Observacao { get; private set; } // <--- Certifique-se de que esta linha existe aqui
 
-    // Construtor que recebe os parâmetros e chama a validação do domínio
-    public Invoice(string invoiceNumber, string companyName, string cnpj, string customerName, decimal totalValue)
+    // Construtor recebendo a observação com valor padrão "OK"
+    public Invoice(string number, string companyName, string cnpj, string customerName, DateTime issueDate, decimal totalValue, string observacao = "OK")
     {
-        ValidateDomain(invoiceNumber, companyName, totalValue);
+        ValidateDomain(number, companyName, totalValue);
 
-        InvoiceNumber = invoiceNumber;
+        Number = number;
         CompanyName = companyName;
         Cnpj = cnpj;
         CustomerName = customerName;
+        IssueDate = issueDate;
         TotalValue = totalValue;
+        Observacao = observacao; // <--- E que está sendo atribuída aqui
     }
 
-    // Método de validação das regras de negócio
-    private void ValidateDomain(string invoiceNumber, string companyName, decimal totalValue)
+    private void ValidateDomain(string number, string companyName, decimal totalValue)
     {
-        if (string.IsNullOrWhiteSpace(invoiceNumber))
-            throw new ArgumentException("Número da nota obrigatório!");
+        if (string.IsNullOrWhiteSpace(number))
+            throw new ArgumentException("Número da NF obrigatório!");
 
         if (string.IsNullOrWhiteSpace(companyName))
-            throw new ArgumentException("Empresa obrigatória!");
+            throw new ArgumentException("Emitente obrigatório!");
 
         if (totalValue <= 0)
-            throw new ArgumentException("Valor deve ser maior que zero!");
+            throw new ArgumentException("Valor da NF inválido!");
     }
 }

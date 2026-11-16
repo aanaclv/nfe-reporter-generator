@@ -1,9 +1,11 @@
 [
   {
-    "InvoiceNumber": "12345",
-    "CompanyName": "Empresa ABC Ltda",
-    "Cnpj": "12345678000199",
-    "CustomerName": "Cliente XYZ",
-    "TotalValue": 150050
+    "Number": "992346",
+    "CompanyName": "Plotag Sistemas e Suprimentos Ltda",
+    "Cnpj": "00822602000124",
+    "CustomerName": "NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL",
+    "IssueDate": "2015-03-27T09:40:00-03:00",
+    "TotalValue": 689.91,
+    "Observacao": "OK"
   }
 ]
